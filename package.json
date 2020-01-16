@@ -1,6 +1,6 @@
 {
-  "name": "ual-lynx",
-  "version": "0.2.2",
+  "name": "@smontero/ual-lynx",
+  "version": "0.2.3",
   "main": "dist/index.js",
   "license": "MIT",
   "author": {
