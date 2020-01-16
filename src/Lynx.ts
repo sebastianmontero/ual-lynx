@@ -21,13 +21,17 @@ export class Lynx extends Authenticator {
   private users: LynxUser[] = []
   private lynxIsLoading: boolean = true
   private initError: UALError | null = null
-
+  private opt: any
   /**
    * Lynx Constructor
    * @param chains
    */
-  constructor(chains: Chain[]) {
+  constructor(chains: Chain[], opts?: any) {
     super(chains)
+    if(opts)
+      this.opt = opts
+    else
+      this.opt = {}
   }
 
   private isLynxReady(): Promise<boolean> {
@@ -111,7 +115,7 @@ export class Lynx extends Authenticator {
     if (this.users.length === 0) {
       try {
         const account = await window.lynxMobile.requestSetAccount()
-        this.users.push(new LynxUser(this.chains[0], account))
+        this.users.push(new LynxUser(this.chains[0], account, this.opt))
       } catch (e) {
         throw new UALLynxError(
           'Unable to get the current account during login',
