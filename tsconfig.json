@@ -3,7 +3,7 @@
     "target": "es6",
     "module": "commonjs",
     "rootDir": "./src",
-    "outDir": "/home/ianonsio/Documents/experiments/ual-plainjs-renderer/examples/src/ual-lynx/dist",
+    "outDir": "dist",
     "strict": true,
     "noImplicitAny": false,
     "noUnusedLocals": true,
